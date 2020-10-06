@@ -3797,7 +3797,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="326"/>
-        <source>&lt;p&gt;Copyright ownCloud GmbH&lt;/p&gt;</source>
+        <source>&lt;p&gt;Copyright Hibbert IT Solutions Limited&lt;/p&gt;</source>
         <translation>&lt;p&gt;Avtorske pravice ownCloud, GmbH&lt;/p&gt;</translation>
     </message>
     <message>

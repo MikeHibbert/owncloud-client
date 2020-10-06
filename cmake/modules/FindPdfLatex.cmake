@@ -1,4 +1,4 @@
-# (c) 2014 Copyright ownCloud GmbH
+# (c) 2014 Copyright Hibbert IT Solutions Limited
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING* file.
 

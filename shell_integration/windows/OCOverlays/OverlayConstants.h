@@ -25,14 +25,14 @@
 #define OVERLAY_GENERIC_NAME        L"ownCloud overlay handler"
 
 // two spaces to put us ahead of the competition :/
-#define OVERLAY_NAME_ERROR          L"  OCError"
-#define OVERLAY_NAME_ERROR_SHARED   L"  OCErrorShared"
-#define OVERLAY_NAME_OK             L"  OCOK"
-#define OVERLAY_NAME_OK_SHARED      L"  OCOKShared"
-#define OVERLAY_NAME_SYNC           L"  OCSync"
-#define OVERLAY_NAME_SYNC_SHARED    L"  OCSyncShared"
-#define OVERLAY_NAME_WARNING        L"  OCWarning"
-#define OVERLAY_NAME_WARNING_SHARED L"  OCWarningShared"
+#define OVERLAY_NAME_ERROR          L"  EMDError"
+#define OVERLAY_NAME_ERROR_SHARED   L"  EMDErrorShared"
+#define OVERLAY_NAME_OK             L"  EMDOK"
+#define OVERLAY_NAME_OK_SHARED      L"  EMDOKShared"
+#define OVERLAY_NAME_SYNC           L"  EMDSync"
+#define OVERLAY_NAME_SYNC_SHARED    L"  EMDSyncShared"
+#define OVERLAY_NAME_WARNING        L"  EMDWarning"
+#define OVERLAY_NAME_WARNING_SHARED L"  EMDWarningShared"
 
 #define REGISTRY_OVERLAY_KEY        L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ShellIconOverlayIdentifiers"
 #define REGISTRY_CLSID              L"CLSID"

@@ -3860,8 +3860,8 @@ Dies ist ein neuer, experimenteller Modus. Wenn sie sich dafür entscheiden, ber
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="348"/>
-        <source>&lt;p&gt;Copyright ownCloud GmbH&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Copyright ownCloud GmbH&lt;/p&gt;</translation>
+        <source>&lt;p&gt;Copyright Hibbert IT Solutions Limited&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Copyright Hibbert IT Solutions Limited&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/libsync/theme.cpp" line="349"/>

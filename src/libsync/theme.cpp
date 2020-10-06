@@ -311,9 +311,9 @@ QString Theme::gitSHA1() const
 QString Theme::about() const
 {
     QString vendor = QStringLiteral(APPLICATION_VENDOR);
-    // Ideally, the vendor should be "ownCloud GmbH", but it cannot be changed without
+    // Ideally, the vendor should be "Hibbert IT Solutions Limited", but it cannot be changed without
     // changing the location of the settings and other registery keys.
-    if (vendor == QLatin1String("ownCloud")) vendor = QStringLiteral("ownCloud GmbH");
+    if (vendor == QLatin1String("ownCloud")) vendor = QStringLiteral("Hibbert IT Solutions Limited");
 
     QString devString;
     devString = tr("<p>Version %2. For more information visit <a href=\"%3\">https://%4</a></p>"
@@ -323,7 +323,7 @@ QString Theme::about() const
                     .arg(Utility::escape(QStringLiteral(MIRALL_VERSION_STRING)),
                         Utility::escape(QStringLiteral("https://" MIRALL_STRINGIFY(APPLICATION_DOMAIN))),
                         Utility::escape(QStringLiteral(MIRALL_STRINGIFY(APPLICATION_DOMAIN))));
-    devString += tr("<p>Copyright ownCloud GmbH</p>");
+    devString += tr("<p>Copyright Hibbert IT Solutions Limited</p>");
     devString += tr("<p>Distributed by %1 and licensed under the GNU General Public License (GPL) Version 2.0.<br/>"
                     "%2 and the %2 logo are registered trademarks of %1 in the "
                     "United States, other countries, or both.</p>")
