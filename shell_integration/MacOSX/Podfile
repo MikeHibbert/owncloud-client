@@ -1,0 +1,3 @@
+platform :macos, '14.3'
+workspace 'OwnCloud'
+pod 'GDUnixSocket' source '

@@ -3,20 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C2B573BA1B1CD91E00303B36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B573B91B1CD91E00303B36 /* main.m */; };
 		C2B573D21B1CD94B00303B36 /* main.m in Resources */ = {isa = PBXBuildFile; fileRef = C2B573B91B1CD91E00303B36 /* main.m */; };
 		C2B573DE1B1CD9CE00303B36 /* FinderSync.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B573DD1B1CD9CE00303B36 /* FinderSync.m */; };
-		C2B573E21B1CD9CE00303B36 /* FinderSyncExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C2B573D71B1CD9CE00303B36 /* FinderSyncExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C2B573F31B1DAD6400303B36 /* error.iconset in Resources */ = {isa = PBXBuildFile; fileRef = C2B573EB1B1DAD6400303B36 /* error.iconset */; };
 		C2B573F41B1DAD6400303B36 /* ok_swm.iconset in Resources */ = {isa = PBXBuildFile; fileRef = C2B573EC1B1DAD6400303B36 /* ok_swm.iconset */; };
 		C2B573F51B1DAD6400303B36 /* ok.iconset in Resources */ = {isa = PBXBuildFile; fileRef = C2B573ED1B1DAD6400303B36 /* ok.iconset */; };
 		C2B573F71B1DAD6400303B36 /* sync.iconset in Resources */ = {isa = PBXBuildFile; fileRef = C2B573EF1B1DAD6400303B36 /* sync.iconset */; };
 		C2B573F91B1DAD6400303B36 /* warning.iconset in Resources */ = {isa = PBXBuildFile; fileRef = C2B573F11B1DAD6400303B36 /* warning.iconset */; };
 		C2C932F01F0BFC6700C8BCB3 /* SyncClientProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C932EF1F0BFC6700C8BCB3 /* SyncClientProxy.m */; };
+		D0FA72AB25AF3CBE0018A4FA /* GDUnixSocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FA72A725AF3CBE0018A4FA /* GDUnixSocketServer.m */; };
+		D0FA72AC25AF3CBE0018A4FA /* GDUnixSocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FA72A925AF3CBE0018A4FA /* GDUnixSocketClient.m */; };
+		D0FA72AD25AF3CBE0018A4FA /* GDUnixSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FA72AA25AF3CBE0018A4FA /* GDUnixSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				C2B573E21B1CD9CE00303B36 /* FinderSyncExt.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +60,13 @@
 		C2B573F11B1DAD6400303B36 /* warning.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = warning.iconset; path = ../../icons/nopadding/warning.iconset; sourceTree = SOURCE_ROOT; };
 		C2C932EE1F0BFC6700C8BCB3 /* SyncClientProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncClientProxy.h; sourceTree = "<group>"; };
 		C2C932EF1F0BFC6700C8BCB3 /* SyncClientProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncClientProxy.m; sourceTree = "<group>"; };
+		D0FA72A425AF3CBD0018A4FA /* GDUnixSocket_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDUnixSocket_Private.h; path = GDUnixSocket/GDUnixSocket_Private.h; sourceTree = SOURCE_ROOT; };
+		D0FA72A525AF3CBE0018A4FA /* GDUnixSocketServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDUnixSocketServer.h; path = GDUnixSocket/GDUnixSocketServer.h; sourceTree = SOURCE_ROOT; };
+		D0FA72A625AF3CBE0018A4FA /* GDUnixSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDUnixSocket.h; path = GDUnixSocket/GDUnixSocket.h; sourceTree = SOURCE_ROOT; };
+		D0FA72A725AF3CBE0018A4FA /* GDUnixSocketServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDUnixSocketServer.m; path = GDUnixSocket/GDUnixSocketServer.m; sourceTree = SOURCE_ROOT; };
+		D0FA72A825AF3CBE0018A4FA /* GDUnixSocketClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDUnixSocketClient.h; path = GDUnixSocket/GDUnixSocketClient.h; sourceTree = SOURCE_ROOT; };
+		D0FA72A925AF3CBE0018A4FA /* GDUnixSocketClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDUnixSocketClient.m; path = GDUnixSocket/GDUnixSocketClient.m; sourceTree = SOURCE_ROOT; };
+		D0FA72AA25AF3CBE0018A4FA /* GDUnixSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDUnixSocket.m; path = GDUnixSocket/GDUnixSocket.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 		C2B573D81B1CD9CE00303B36 /* FinderSyncExt */ = {
 			isa = PBXGroup;
 			children = (
+				D0FA72A325AF3C8F0018A4FA /* GDUnixSocket */,
 				C2C932EE1F0BFC6700C8BCB3 /* SyncClientProxy.h */,
 				C2C932EF1F0BFC6700C8BCB3 /* SyncClientProxy.m */,
 				C2B573DC1B1CD9CE00303B36 /* FinderSync.h */,
@@ -138,6 +147,20 @@
 				C2B573DB1B1CD9CE00303B36 /* FinderSyncExt.entitlements */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0FA72A325AF3C8F0018A4FA /* GDUnixSocket */ = {
+			isa = PBXGroup;
+			children = (
+				D0FA72A425AF3CBD0018A4FA /* GDUnixSocket_Private.h */,
+				D0FA72A625AF3CBE0018A4FA /* GDUnixSocket.h */,
+				D0FA72AA25AF3CBE0018A4FA /* GDUnixSocket.m */,
+				D0FA72A825AF3CBE0018A4FA /* GDUnixSocketClient.h */,
+				D0FA72A925AF3CBE0018A4FA /* GDUnixSocketClient.m */,
+				D0FA72A525AF3CBE0018A4FA /* GDUnixSocketServer.h */,
+				D0FA72A725AF3CBE0018A4FA /* GDUnixSocketServer.m */,
+			);
+			path = GDUnixSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,11 +213,11 @@
 				TargetAttributes = {
 					C2B573B01B1CD91E00303B36 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 9B5WD74GWJ;
+						DevelopmentTeam = G4X28XL4YD;
 					};
 					C2B573D61B1CD9CE00303B36 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 9B5WD74GWJ;
+						DevelopmentTeam = G4X28XL4YD;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
@@ -204,10 +227,11 @@
 				};
 			};
 			buildConfigurationList = C2B573981B1CD88000303B36 /* Build configuration list for PBXProject "OwnCloudFinderSync" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -275,8 +299,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FA72AD25AF3CBE0018A4FA /* GDUnixSocket.m in Sources */,
 				C2C932F01F0BFC6700C8BCB3 /* SyncClientProxy.m in Sources */,
 				C2B573DE1B1CD9CE00303B36 /* FinderSync.m in Sources */,
+				D0FA72AC25AF3CBE0018A4FA /* GDUnixSocketClient.m in Sources */,
+				D0FA72AB25AF3CBE0018A4FA /* GDUnixSocketServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,12 +321,25 @@
 		C2B573991B1CD88000303B36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = G4X28XL4YD;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
+					"DEBUG=1",
+					"DEBUG=1",
+					GD_UNIX_SOCKET_DEBUG,
+				);
 			};
 			name = Debug;
 		};
 		C2B5739A1B1CD88000303B36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = G4X28XL4YD;
 			};
 			name = Release;
 		};
@@ -342,10 +382,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = desktopclient/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermoredata.store;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -385,9 +429,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = desktopclient/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermoredata.store;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -433,14 +481,19 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = FinderSyncExt/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OC_APPLICATION_NAME = ownCloud;
-				OC_APPLICATION_REV_DOMAIN = com.owncloud.desktopclient;
+				OC_APPLICATION_NAME = Evermore;
+				OC_APPLICATION_REV_DOMAIN = com.evermoredata.store;
 				OC_OEM_SHARE_ICNS = "";
 				OC_SOCKETAPI_TEAM_IDENTIFIER_PREFIX = "";
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermoredata.store.FinderSyncExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -482,13 +535,18 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = FinderSyncExt/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OC_APPLICATION_NAME = ownCloud;
-				OC_APPLICATION_REV_DOMAIN = com.owncloud.desktopclient;
+				OC_APPLICATION_NAME = Evermore;
+				OC_APPLICATION_REV_DOMAIN = com.evermoredata.store;
 				OC_OEM_SHARE_ICNS = "";
 				OC_SOCKETAPI_TEAM_IDENTIFIER_PREFIX = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermoredata.store.FinderSyncExt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;

@@ -13,7 +13,7 @@
  */
 
 #import <Foundation/Foundation.h>
-
+#import "GDUnixSocketClient.h"
 
 @protocol SyncClientProxyDelegate <NSObject>
 - (void)setResultForPath:(NSString*)path result:(NSString*)result;
@@ -33,7 +33,7 @@
 @interface SyncClientProxy : NSObject <ChannelProtocol>
 {
 	NSString *_serverName;
-	NSDistantObject <ChannelProtocol> *_remoteEnd;
+    GDUnixSocketClient *_client;
 }
 
 @property (weak) id <SyncClientProxyDelegate> delegate;

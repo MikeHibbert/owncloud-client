@@ -11,15 +11,15 @@
  * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
  * for more details.
  */
-
+#import <os/log.h>
 #import "SyncClientProxy.h"
 
 @protocol ServerProtocol <NSObject>
 - (void)registerClient:(id)client;
 @end
 
-@interface SyncClientProxy ()
-- (void)registerTransmitter:(id)tx;
+@interface SyncClientProxy () <GDUnixSocketClientDelegate>
+
 @end
 
 @implementation SyncClientProxy
@@ -30,7 +30,10 @@
 	
 	self.delegate = arg1;
 	_serverName = serverName;
-	_remoteEnd = nil;
+    
+    NSLog(@"QQQ The code runs through here!");
+    
+    // os_log_with_type(OS_LOG_DEFAULT, OS_LOG_TYPE_ERROR, "HELLO CONSOLE!");
 
 	return self;
 }
@@ -39,41 +42,22 @@
 
 - (void)start
 {
-	if (_remoteEnd)
-		return;
+	//if (_remoteEnd)
+		//return;
+    
+    // NSLog(@"QQQ The code runs through here!");
 
 	// Lookup the server connection
-	NSConnection *conn = [NSConnection connectionWithRegisteredName:_serverName host:nil];
-
-	if (!conn) {
-		// Could not connect to the sync client
-		[self scheduleRetry];
-		return;
-	}
-
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(connectionDidDie:)
-												 name:NSConnectionDidDieNotification
-											   object:conn];
-	
-	NSDistantObject <ServerProtocol> *server = (NSDistantObject <ServerProtocol> *)[conn rootProxy];
-	assert(server);
-	
-	// This saves a few Mach messages, enable "Distributed Objects" in the scheme's Run diagnostics to watch
-	[server setProtocolForProxy:@protocol(ServerProtocol)];
-	
-	// Send an object to the server to act as the channel rx, we'll receive the tx through registerTransmitter
-	[server registerClient:self];
-}
-
-- (void)registerTransmitter:(id)tx;
-{
-	// The server replied with the distant object that we will use for tx
-	_remoteEnd = (NSDistantObject <ChannelProtocol> *)tx;
-	[_remoteEnd setProtocolForProxy:@protocol(ChannelProtocol)];
-	
-	// Everything is set up, start querying
-	[self askOnSocket:@"" query:@"GET_STRINGS"];
+    
+    /*
+    _client.delegate = self;
+    
+    NSError *error;
+    if ([_client connectWithAutoRead:YES error:&error]) {
+        NSLog(@"Connected to %@", _serverName);
+    } else {
+        NSLog(@"Couldnt Connect to %@", _serverName);
+    }*/
 }
 
 - (void)scheduleRetry
@@ -83,8 +67,7 @@
 
 - (void)connectionDidDie:(NSNotification*)notification
 {
-#pragma unused(notification)	
-	_remoteEnd = nil;
+#pragma unused(notification)
 	[_delegate connectionDidDie];
 	
 	[self scheduleRetry];
@@ -94,7 +77,11 @@
 
 - (void)sendMessage:(NSData*)msg
 {
-	NSString *answer = [[NSString alloc] initWithData:msg encoding:NSUTF8StringEncoding];
+    [_client writeData: msg completion:nil];
+}
+
+- (void)unixSocketClient:(GDUnixSocketClient *)unixSocketClient didReceiveData:(NSData*)data {
+	NSString *answer = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	
 	// Cut the trailing newline. We always only receive one line from the client.
 	answer = [answer substringToIndex:[answer length] - 1];
@@ -145,9 +132,10 @@
 	NSString *query = [NSString stringWithFormat:@"%@:%@\n", verb,path];
 	
 	@try {
-		[_remoteEnd sendMessage:[query dataUsingEncoding:NSUTF8StringEncoding]];
+		[self sendMessage:[query dataUsingEncoding:NSUTF8StringEncoding]];
 	} @catch(NSException* e) {
 		// Do nothing and wait for connectionDidDie
+        NSLog(@"%@", e.debugDescription);
 	}
 }
 
@@ -155,6 +143,12 @@
 {
 	NSString *verb = isDir ? @"RETRIEVE_FOLDER_STATUS" : @"RETRIEVE_FILE_STATUS";
 	[self askOnSocket:path query:verb];
+}
+
+#pragma mark - GDUnixSocketClientDelegate
+
+- (void)unixSocketClient:(GDUnixSocketClient *)unixSocketClient didFailToReadWithError:(NSError *)error {
+    NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
 }
 
 @end

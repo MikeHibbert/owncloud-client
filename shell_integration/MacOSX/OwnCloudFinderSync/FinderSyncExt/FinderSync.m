@@ -26,6 +26,8 @@
 	NSBundle *extBundle = [NSBundle bundleForClass:[self class]];
 	// This was added to the bundle's Info.plist to get it from the build system
 	NSString *socketApiPrefix = [extBundle objectForInfoDictionaryKey:@"SocketApiPrefix"];
+    
+    NSLog(@"FinderSync socketApiPrefix %@", socketApiPrefix);
 
 	NSImage *ok = [extBundle imageForResource:@"ok.icns"];
 	NSImage *ok_swm = [extBundle imageForResource:@"ok_swm.icns"];
@@ -55,7 +57,8 @@
 	// the sandboxed App Extension needs.
 	// https://developer.apple.com/library/mac/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html#//apple_ref/doc/uid/TP40011183-CH3-SW24
 	NSString *serverName = [socketApiPrefix stringByAppendingString:@".socketApi"];
-	//NSLog(@"FinderSync serverName %@", serverName);
+    //NSString *serverName = @"http://localhost:8002"; //@"com.evermoredata.store.socketApi";
+	NSLog(@"FinderSync serverName %@", serverName);
 
 	_syncClientProxy = [[SyncClientProxy alloc] initWithDelegate:self serverName:serverName];
 	_registeredDirectories = [[NSMutableSet alloc] init];
