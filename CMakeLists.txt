@@ -25,7 +25,7 @@ find_package(Qt5 REQUIRED COMPONENTS Core)
 
 if(UNIT_TESTING)
     message(DEPRECATION "Setting UNIT_TESTING is deprecated please use BUILD_TESTING")
-    set(BUILD_TESTING TRUE)
+    set(BUILD_TESTING FALSE)
 endif()
 include(CTest)
 
@@ -112,7 +112,7 @@ option(BUILD_SHELL_INTEGRATION_DOLPHIN "BUILD_SHELL_INTEGRATION_DOLPHIN" ON)
 option(BUILD_SHELL_INTEGRATION_NAUTILUS "BUILD_SHELL_INTEGRATION_NAUTILUS" ON)
 
 # this option builds the client
-option(BUILD_CLIENT "BUILD_CLIENT" ON)
+option(BUILD_CLIENT "BUILD_CLIENT" OFF)
 
 # this option builds the client documentation
 option(BUILD_DOCS "BUILD_DOCS" OFF)
@@ -121,7 +121,7 @@ option(BUILD_DOCS "BUILD_DOCS" OFF)
 option(BUILD_LIBRARIES_ONLY "BUILD_LIBRARIES_ONLY" OFF)
 
 # build the GUI component, when disabled only owncloudcmd is built
-option(BUILD_GUI "BUILD_GUI" ON)
+option(BUILD_GUI "BUILD_GUI" OFF)
 
 # specify additional vfs plugins
 set(VIRTUAL_FILE_SYSTEM_PLUGINS suffix win CACHE STRING "Name of internal plugin in src/libsync/vfs or the locations of virtual file plugins")
@@ -135,7 +135,7 @@ if(OWNCLOUD_5XX_NO_BLACKLIST)
 endif()
 
 if(APPLE)
-  set( SOCKETAPI_TEAM_IDENTIFIER_PREFIX "" CACHE STRING "SocketApi prefix (including a following dot) that must match the codesign key's TeamIdentifier/Organizational Unit" )
+  set( SOCKETAPI_TEAM_IDENTIFIER_PREFIX "G4X28XL4YD" CACHE STRING "SocketApi prefix (including a following dot) that must match the codesign key's TeamIdentifier/Organizational Unit" )
 endif()
 
 if(BUILD_CLIENT)

@@ -48,16 +48,20 @@
     // NSLog(@"QQQ The code runs through here!");
 
 	// Lookup the server connection
+    NSURL *container = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier: @"G4X28XL4YD.com.evermoredata.store"];
     
-    /*
+    NSURL *socketURL = [container URLByAppendingPathComponent: @"G4X28XL4YD.com.evermoredata.store.socketApi"];
+    
+    _client = [[GDUnixSocketClient alloc] initWithSocketPath:[socketURL absoluteString]];
+    
     _client.delegate = self;
     
     NSError *error;
     if ([_client connectWithAutoRead:YES error:&error]) {
-        NSLog(@"Connected to %@", _serverName);
+        NSLog(@"Connected to %@", socketURL);
     } else {
-        NSLog(@"Couldnt Connect to %@", _serverName);
-    }*/
+        NSLog(@"Couldnt Connect to %@", socketURL);
+    }
 }
 
 - (void)scheduleRetry

@@ -18,6 +18,9 @@
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>NSExtensionFileProviderDocumentGroup</key>
+	<string>
+group.com.evermoredata.store</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>

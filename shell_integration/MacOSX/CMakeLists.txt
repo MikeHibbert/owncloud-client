@@ -11,7 +11,7 @@ add_custom_target( mac_overlayplugin ALL
         "OC_OEM_SHARE_ICNS=${OC_OEM_SHARE_ICNS}"
         "OC_APPLICATION_NAME=${APPLICATION_NAME}"
         "OC_APPLICATION_REV_DOMAIN=${APPLICATION_REV_DOMAIN}"
-        "OC_SOCKETAPI_TEAM_IDENTIFIER_PREFIX=/tmp/G4X28XL4YD."
+        "OC_SOCKETAPI_TEAM_IDENTIFIER_PREFIX=G4X28XL4YD."
     COMMENT building Mac Overlay icons
     VERBATIM)
 add_dependencies(mac_overlayplugin ${APPLICATION_EXECUTABLE}) # for the ownCloud.icns to be generated
